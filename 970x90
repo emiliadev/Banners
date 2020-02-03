@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>970x90 banner Guardia</title>
+    <link href="https://fonts.googleapis.com/css?family=Jura|Passion+One:700&display=swap" rel="stylesheet">
+    <script>
+        document.write('<script src="' + 'https://sn.sanoma.fi/js/ClicksApi.js?vr=' + Math.random() + '"><\/script>');
+    </script>
+
+    <style>
+        #banner { 
+            width: 970px; 
+            height: 90px; 
+            background: #101929; 
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+             /*Steps*/
+            .left {
+                position: absolute;
+                margin-left: 780px;
+                height: 50px;
+                width: 17px;
+                z-index: 10;
+                opacity: 0;
+                animation: 
+                    step1 10s linear 0s 1 forwards, 
+                    step3 8s linear 3s 1 forwards; 
+            }
+            .right {
+                position: absolute;
+                margin-left: 820px;
+                height: 49px;
+                width: 19px;
+                opacity: 0;
+                z-index: 10;
+                animation: 
+                    step2 9s linear 1.5s 1 normal,
+                    step4 7s linear 4.5s 1 normal;
+            }
+            /*Crosswalk slide*/
+            #crosswalk {
+                background: url(crossing_90.png), no-repeat;
+                position: absolute;
+                margin-left: 670px;
+                height: 169px;
+                width: 320px;
+                z-index: 1;
+                animation: crosswalkSlide 10s linear 0s 1 forwards;
+            }
+            /*Pysähdytkö ajoissa?*/
+            #text1 { 
+                position: absolute; 
+                opacity: 0; 
+                color: white;
+                font: bold 50px 'Passion One', cursive;
+                animation: text1Slide 5s ease-in-out 0s 1 normal;
+                animation-fill-mode: forwards;
+            }
+            #car {
+                background: url(guardia_250.png), no-repeat;
+                position: absolute;
+                height: 250px;
+                width: 250px;
+                opacity: 0;
+                z-index: 11;
+                animation: moveCar 2s ease-in-out 4s 1 forwards;
+            }
+             /*Uusi Skoda Guardia automaattisella pysähdysteknologialla nyt ennakkomyynnissä*/
+            #text2 { 
+                background-color: #4CA847;
+                height: 90px;
+                width: 970px;
+                position: absolute; 
+                padding: 13px 0px 0px 20px; 
+                opacity: 0; 
+                color: white;
+                font: bold 20px 'Jura', sans-serif;
+                line-height: 1.5em;
+                text-align: center;
+                animation: text2Show 3s ease-out 4s 1 normal;
+                animation-fill-mode: forwards;
+            } 
+            /*TUTUSTU*/
+            #link { 
+                position: absolute; 
+                margin: 35px 0px 0px 760px; 
+                opacity: 0; 
+                text-align: center;
+                animation: linkShow 2s ease-out 4s 1 normal;
+                animation-fill-mode: forwards;
+            }
+            a {
+                color: black;
+                font: 16px 'Jura', sans-serif;
+                background: white;
+                text-decoration: none;
+                text-align: center;
+                padding: 8px 15px;
+                border-radius: 8px;
+                transform: 0.3s;
+            }
+            a:hover {
+                background: rgb(53, 119, 49);
+                color: white;
+            }
+
+         /*Crosswalk sliding*/   
+        @keyframes crosswalkSlide {
+            0% { scale: (1); bottom: 0px; }
+            100% { scale: (2); bottom: -400px;}
+        }
+        /*Steps*/
+        @keyframes step1 {
+            0% { opacity: 0; scale: (1); bottom: 40px; }
+            5% { opacity: 1;}
+            100% { opacity: 1; scale: (2); bottom: -380px; }
+        }
+        @keyframes step2 {
+            0% { opacity: 0; scale: (1); bottom: 40px; }
+            5% { opacity: 1;}
+            100% { opacity: 1; scale: (2); bottom: -340px; }
+        }
+        @keyframes step3 {
+            0% { opacity: 0; scale: (1); bottom: 40px; }
+            5% { opacity: 1;}
+            100% { opacity: 1; scale: (2); bottom: -300px; }
+        }
+
+        /*Pysähdytkö ajoissa?*/
+        @keyframes text1Slide {
+            0% { margin: 15px 0px 0px 0px; opacity: 0; }
+            50% { margin: 15px 0px 0px 170px; opacity: 1; }
+            100% { margin: 15px 0px 0px 170px; opacity: 0; }
+        }
+        /*Car sliding*/
+         @keyframes moveCar {
+            0% { opacity: 0; scale: (1); margin-top: -20px; }
+            100% { opacity: 1; scale: (2); margin-top: -70px; }
+        }
+        /*Uusi Skoda Guardia automaattisella pysähdysteknologialla nyt ennakkomyynnissä*/
+        @keyframes text2Show {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        /*Tutustu mallistoon*/
+        @keyframes linkShow {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <div id="crosswalk"></div>
+        <img class="left" src="left.png">
+        <img class="right" src="right.png">
+        <div id="text1">PYSÄHDYTKÖ AJOISSA?</div>
+        <div id="car"></div>
+        <div id="text2">Uusi Skoda Guardia automaattisella <br> pysähdysteknologialla nyt ennakkomyynnissä</div>
+        <div id="link">
+            <a href="javascript:void(0);" target="_blank" onclick="SanomaClicksApi.openClickUrl('https://www.skoda.fi/mallisto/range#any'); return false;">Tutustu mallistoon</a>
+        </div>
+    </div>
+</body>
+</html>
